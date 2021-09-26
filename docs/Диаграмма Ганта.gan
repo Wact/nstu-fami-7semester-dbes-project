@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Информационная система торговой компании" company="НГТУ" webLink="https://github.com/Wact/nstu-fami-7semester-dbes-project" view-date="2021-09-26" view-index="0" gantt-divider-location="236" resource-divider-location="273" version="3.1.3102" locale="en_US">
+    <description>
+        <![CDATA[Проект по дисциплине "Базы данных и экспертные системы". ]]>
+    </description>
+    <view zooming-state="default:5" id="gantt-chart">
+        <field id="tpd3" name="Name" width="128" order="0"/>
+        <field id="tpd4" name="Begin date" width="52" order="1"/>
+        <field id="tpd5" name="End date" width="52" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="195" order="0"/>
+        <field id="1" name="Default role" width="74" order="1"/>
+    </view>
+    <!-- -->
+    <calendars base-id="none">
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="S1.1 Анализ предметной области. UML Диаграммы" color="#8cb6ce" meeting="false" start="2021-09-27" duration="14" complete="0" thirdDate="2021-09-27" thirdDate-constraint="0" expand="true">
+            <depend id="4" type="1" difference="0" hardness="Strong"/>
+        </task>
+        <task id="4" name="S1.2 Инфологическое проектирование" color="#8cb6ce" meeting="false" start="2021-09-27" duration="14" complete="0" thirdDate="2021-09-27" thirdDate-constraint="0" expand="true">
+            <depend id="6" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="S1.3 Логическое проектирование" color="#8cb6ce" meeting="false" start="2021-10-11" duration="7" complete="0" thirdDate="2021-09-27" thirdDate-constraint="0" expand="true">
+            <depend id="13" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="13" name="S1.4 SQL-запросы" color="#8cb6ce" meeting="false" start="2021-10-18" duration="7" complete="0" thirdDate="2021-09-27" thirdDate-constraint="0" expand="true">
+            <depend id="25" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="25" name="S1.5 Хранимые процедуры и триггеры" color="#8cb6ce" meeting="false" start="2021-10-25" duration="7" complete="0" thirdDate="2021-10-18" thirdDate-constraint="0" expand="true"/>
+        <task id="32" name="S1.6 Приложение" color="#8cb6ce" meeting="false" start="2021-09-27" duration="70" complete="0" thirdDate="2021-09-27" thirdDate-constraint="0" expand="true"/>
+    </tasks>
+    <resources>
+        <resource id="0" name="Бариев Родион" function="2" contacts="" phone=""/>
+        <resource id="1" name="Гончаренко Никита" function="1" contacts="" phone=""/>
+        <resource id="2" name="Ермолаева Ярослава" function="2" contacts="" phone=""/>
+        <resource id="3" name="Малыгин Артём" function="3" contacts="" phone=""/>
+        <resource id="4" name="Чевлытко Екатерина" function="2" contacts="" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="6" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="0" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="32" resource-id="1" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="0" resource-id="2" function="2" responsible="false" load="100.0"/>
+        <allocation task-id="13" resource-id="3" function="3" responsible="true" load="100.0"/>
+        <allocation task-id="6" resource-id="4" function="2" responsible="true" load="100.0"/>
+        <allocation task-id="4" resource-id="4" function="2" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+    <roles>
+        <role id="1" name="Разработчик"/>
+        <role id="2" name="Аналитик"/>
+        <role id="3" name="Руководитель"/>
+    </roles>
+</project>

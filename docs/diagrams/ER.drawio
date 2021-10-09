@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T12:58:29.838Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="f20Wl52JMToZ74C77paQ" version="15.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-09T13:01:34.352Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="4lfFzV0TJjYCHcMCnLD3" version="15.5.0" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -191,7 +191,7 @@
         </mxCell>
         <mxCell id="wNKjYSVliJtvh4yzvfl7-33" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="wNKjYSVliJtvh4yzvfl7-17">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="185" y="450" as="sourcePoint" />
+            <mxPoint x="185" y="480" as="sourcePoint" />
             <mxPoint x="450" y="460" as="targetPoint" />
             <Array as="points">
               <mxPoint x="185" y="480" />
@@ -379,6 +379,16 @@
         </mxCell>
         <mxCell id="wNKjYSVliJtvh4yzvfl7-117" value="производится у" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
           <mxGeometry x="367" y="240" width="113" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wNKjYSVliJtvh4yzvfl7-118" value="состоит из" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="490" width="90" height="20" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wNKjYSVliJtvh4yzvfl7-119" value="является частью" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="60" y="485" width="113" height="30" as="geometry">
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>

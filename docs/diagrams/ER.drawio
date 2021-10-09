@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-09T13:11:42.212Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="jwghwjffV12uJu1q7jgx" version="15.5.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-10-09T13:12:52.296Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="GZ_oJzlZkJmxk_CGSLZE" version="15.5.0" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
     <mxGraphModel dx="868" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -388,7 +388,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="wNKjYSVliJtvh4yzvfl7-119" value="является частью" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
-          <mxGeometry x="60" y="485" width="113" height="30" as="geometry">
+          <mxGeometry x="77" y="550" width="113" height="30" as="geometry">
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -402,7 +402,7 @@
           <mxGeometry y="7.79" width="47.5" height="24" as="geometry" />
         </mxCell>
         <mxCell id="wNKjYSVliJtvh4yzvfl7-126" value="выполняется" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
-          <mxGeometry x="327" y="620" width="113" height="30" as="geometry">
+          <mxGeometry x="322" y="630" width="103" height="30" as="geometry">
             <mxRectangle width="220" height="30" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
@@ -432,6 +432,16 @@
         </mxCell>
         <mxCell id="wNKjYSVliJtvh4yzvfl7-135" value="R6" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=#FFFFFF;" vertex="1" parent="wNKjYSVliJtvh4yzvfl7-133">
           <mxGeometry y="7.79" width="47.5" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="wNKjYSVliJtvh4yzvfl7-139" value="собирает" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="745" width="103" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wNKjYSVliJtvh4yzvfl7-140" value="делает заказ" style="shape=partialRectangle;overflow=hidden;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="467" y="745" width="103" height="30" as="geometry">
+            <mxRectangle width="220" height="30" as="alternateBounds" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

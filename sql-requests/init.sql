@@ -14,7 +14,7 @@ create table if not exists supplier
 create table if not exists product_type
 (
     id            int generated always as identity primary key,
-    name          character(30)  not null,
+    name          character(30)  not null unique,
     specification character(290) not null
 );
 
@@ -43,7 +43,7 @@ create table if not exists supply
 create table if not exists outlet_type
 (
     id            int generated always as identity primary key,
-    name          character(30)  not null,
+    name          character(30)  not null unique,
     specification character(290) not null
 );
 
@@ -51,7 +51,7 @@ create table if not exists outlet
 (
     id             int generated always as identity primary key,
     outlet_type_id int references outlet_type,
-    address        character(280) not null,
+    address        character(280) not null unique,
     open_date      timestamptz    not null,
     close_date     timestamptz,
     constraint open_date_less_close_date check (
@@ -62,7 +62,7 @@ create table if not exists outlet
 create table if not exists position
 (
     id           int generated always as identity primary key,
-    name         character(50) not null,
+    name         character(50) not null unique,
     access_level int           not null,
     min_salary   money         not null,
     max_salary   money         not null,
@@ -80,17 +80,17 @@ create table if not exists position
         )
 );
 
-
 create table if not exists employee
 (
-    id          int generated always as identity primary key,
-    outlet_id   int references outlet,
-    position_id int references position,
-    fullname    character(100) not null,
-    date        timestamptz    not null,
-    salary      money          not null,
-    begin_date  timestamptz    not null,
-    end_date    timestamptz,
+    id            int generated always as identity primary key,
+    outlet_id     int references outlet,
+    position_id   int references position,
+    fullname      character(100) not null,
+    personal_data character(50)  not null unique,
+    date          timestamptz    not null,
+    salary        money          not null,
+    begin_date    timestamptz    not null,
+    end_date      timestamptz,
     constraint fire_date_more_begin_date check (
         employee.end_date > employee.begin_date
         )
@@ -119,7 +119,6 @@ create table if not exists application
     status               character(20) not null,
     creation_date        timestamptz   not null default now(),
     changing_status_date timestamptz   not null
-
 );
 
 create table if not exists application_item
@@ -128,13 +127,14 @@ create table if not exists application_item
     application_id  int references application,
     product_barcode character(13) references product,
     amount          int not null,
+    constraint unique (application_id, product_barcode, amount),
     constraint amount_is_positive check ( application_item.amount > 0 )
 );
 
 create table if not exists client
 (
     id                   int generated always as identity primary key,
-    card_number          character(20)  not null,
+    card_number          character(20)  not null unique,
     fullname             character(100) not null,
     birth_date           timestamptz    not null,
     creation_card_date   timestamptz    not null default now(),
@@ -193,7 +193,7 @@ create table if not exists selling
 create table if not exists warehouse
 (
     id         int generated always as identity primary key,
-    address    character(290) not null,
+    address    character(290) not null unique,
     area       int            not null,
     open_date  timestamptz    not null,
     close_date timestamptz,
@@ -220,7 +220,7 @@ create table if not exists distribution
 create table if not exists payment_type
 (
     id            int generated always as identity primary key,
-    name          character(30)  not null,
+    name          character(30)  not null unique,
     specification character(290) not null
 );
 

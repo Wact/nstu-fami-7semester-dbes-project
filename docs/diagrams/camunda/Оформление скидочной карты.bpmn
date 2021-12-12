@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_14e0jwx" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <bpmn:collaboration id="Collaboration_1yj96z8">
+    <bpmn:participant id="Participant_18gudg6" name="Оформление скидочной карты" processRef="Process_1ky5rg4" />
+    <bpmn:participant id="Participant_0ywsh80" name="Клиент" processRef="Process_0f4upr2" />
+    <bpmn:messageFlow id="Flow_08irqn4" sourceRef="Participant_0ywsh80" targetRef="Participant_18gudg6" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1ky5rg4" isExecutable="true">
+    <bpmn:startEvent id="Event_1g7khek" name="Клиент хочет оформить скидочную карту">
+      <bpmn:outgoing>Flow_0q5406z</bpmn:outgoing>
+      <bpmn:conditionalEventDefinition id="ConditionalEventDefinition_040oskh">
+        <bpmn:condition xsi:type="bpmn:tFormalExpression" />
+      </bpmn:conditionalEventDefinition>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_1mhjnh2" name="Активировать карту в системе">
+      <bpmn:incoming>Flow_0677tmk</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ru0cxz</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_00lvwwl">
+      <bpmn:incoming>Flow_0ru0cxz</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:task id="Activity_056za7s" name="Заполнить анкету для карты">
+      <bpmn:incoming>Flow_0q5406z</bpmn:incoming>
+      <bpmn:outgoing>Flow_0677tmk</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sequenceFlow id="Flow_0ru0cxz" sourceRef="Activity_1mhjnh2" targetRef="Event_00lvwwl" />
+    <bpmn:sequenceFlow id="Flow_0677tmk" sourceRef="Activity_056za7s" targetRef="Activity_1mhjnh2" />
+    <bpmn:sequenceFlow id="Flow_0q5406z" sourceRef="Event_1g7khek" targetRef="Activity_056za7s" />
+  </bpmn:process>
+  <bpmn:process id="Process_0f4upr2" isExecutable="false" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1yj96z8">
+      <bpmndi:BPMNShape id="Participant_18gudg6_di" bpmnElement="Participant_18gudg6" isHorizontal="true">
+        <dc:Bounds x="160" y="240" width="600" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0ru0cxz_di" bpmnElement="Flow_0ru0cxz">
+        <di:waypoint x="600" y="300" />
+        <di:waypoint x="662" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0677tmk_di" bpmnElement="Flow_0677tmk">
+        <di:waypoint x="440" y="300" />
+        <di:waypoint x="500" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0q5406z_di" bpmnElement="Flow_0q5406z">
+        <di:waypoint x="288" y="300" />
+        <di:waypoint x="340" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1388c9p_di" bpmnElement="Event_1g7khek">
+        <dc:Bounds x="252" y="282" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="227" y="325" width="86" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1mhjnh2_di" bpmnElement="Activity_1mhjnh2">
+        <dc:Bounds x="500" y="260" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_00lvwwl_di" bpmnElement="Event_00lvwwl">
+        <dc:Bounds x="662" y="282" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0th8t7x_di" bpmnElement="Activity_056za7s">
+        <dc:Bounds x="340" y="260" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0ywsh80_di" bpmnElement="Participant_0ywsh80" isHorizontal="true">
+        <dc:Bounds x="160" y="80" width="600" height="110" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_08irqn4_di" bpmnElement="Flow_08irqn4">
+        <di:waypoint x="230" y="190" />
+        <di:waypoint x="230" y="240" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

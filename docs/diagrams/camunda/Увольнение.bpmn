@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0wwvozu" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <bpmn:collaboration id="Collaboration_0xt40st">
+    <bpmn:participant id="Participant_0qy9ewu" name="Увольнение" processRef="Process_0j2v853" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_0j2v853" isExecutable="true">
+    <bpmn:laneSet id="LaneSet_0zc4c7p">
+      <bpmn:lane id="Lane_10vndnh" name="Отдел кадров">
+        <bpmn:flowNodeRef>Event_05t80ku</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0v7d67u</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1xn9xna</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0fo0afs</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1ew392c</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_07mykf0</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1i88ar5</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:startEvent id="Event_05t80ku">
+      <bpmn:outgoing>Flow_0s35eer</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:exclusiveGateway id="Gateway_0v7d67u" name="Увольнение по собственному желанию?">
+      <bpmn:incoming>Flow_0s35eer</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ctr7gd</bpmn:outgoing>
+      <bpmn:outgoing>Flow_06jeg6b</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="Activity_1xn9xna" name="Согласовать документы">
+      <bpmn:incoming>Flow_0dksi97</bpmn:incoming>
+      <bpmn:outgoing>Flow_0khf0ut</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0fo0afs">
+      <bpmn:incoming>Flow_0khf0ut</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0s35eer" sourceRef="Event_05t80ku" targetRef="Gateway_0v7d67u" />
+    <bpmn:sequenceFlow id="Flow_0ctr7gd" name="Да" sourceRef="Gateway_0v7d67u" targetRef="Activity_1ew392c" />
+    <bpmn:sequenceFlow id="Flow_06jeg6b" name="Нет" sourceRef="Gateway_0v7d67u" targetRef="Activity_07mykf0" />
+    <bpmn:sequenceFlow id="Flow_08onsli" sourceRef="Activity_1ew392c" targetRef="Gateway_1i88ar5" />
+    <bpmn:sequenceFlow id="Flow_0jhfi6v" sourceRef="Activity_07mykf0" targetRef="Gateway_1i88ar5" />
+    <bpmn:sequenceFlow id="Flow_0dksi97" sourceRef="Gateway_1i88ar5" targetRef="Activity_1xn9xna" />
+    <bpmn:sequenceFlow id="Flow_0khf0ut" sourceRef="Activity_1xn9xna" targetRef="Event_0fo0afs" />
+    <bpmn:task id="Activity_1ew392c" name="Оформить приказ об увольнении по собственному желанию">
+      <bpmn:incoming>Flow_0ctr7gd</bpmn:incoming>
+      <bpmn:outgoing>Flow_08onsli</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="Activity_07mykf0" name="Оформить приказ о нарушении трудового договора">
+      <bpmn:incoming>Flow_06jeg6b</bpmn:incoming>
+      <bpmn:outgoing>Flow_0jhfi6v</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="Gateway_1i88ar5">
+      <bpmn:incoming>Flow_08onsli</bpmn:incoming>
+      <bpmn:incoming>Flow_0jhfi6v</bpmn:incoming>
+      <bpmn:outgoing>Flow_0dksi97</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0xt40st">
+      <bpmndi:BPMNShape id="Participant_0qy9ewu_di" bpmnElement="Participant_0qy9ewu" isHorizontal="true">
+        <dc:Bounds x="160" y="110" width="870" height="270" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_10vndnh_di" bpmnElement="Lane_10vndnh" isHorizontal="true">
+        <dc:Bounds x="190" y="110" width="840" height="270" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0khf0ut_di" bpmnElement="Flow_0khf0ut">
+        <di:waypoint x="850" y="260" />
+        <di:waypoint x="922" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0dksi97_di" bpmnElement="Flow_0dksi97">
+        <di:waypoint x="675" y="260" />
+        <di:waypoint x="750" y="260" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0jhfi6v_di" bpmnElement="Flow_0jhfi6v">
+        <di:waypoint x="570" y="320" />
+        <di:waypoint x="650" y="320" />
+        <di:waypoint x="650" y="285" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08onsli_di" bpmnElement="Flow_08onsli">
+        <di:waypoint x="570" y="180" />
+        <di:waypoint x="650" y="180" />
+        <di:waypoint x="650" y="235" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_06jeg6b_di" bpmnElement="Flow_06jeg6b">
+        <di:waypoint x="380" y="265" />
+        <di:waypoint x="380" y="320" />
+        <di:waypoint x="470" y="320" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="416" y="303" width="20" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ctr7gd_di" bpmnElement="Flow_0ctr7gd">
+        <di:waypoint x="380" y="215" />
+        <di:waypoint x="380" y="180" />
+        <di:waypoint x="470" y="180" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="420" y="162" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0s35eer_di" bpmnElement="Flow_0s35eer">
+        <di:waypoint x="298" y="240" />
+        <di:waypoint x="355" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_05t80ku_di" bpmnElement="Event_05t80ku">
+        <dc:Bounds x="262" y="222" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0v7d67u_di" bpmnElement="Gateway_0v7d67u" isMarkerVisible="true">
+        <dc:Bounds x="355" y="215" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="413" y="235" width="75" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xn9xna_di" bpmnElement="Activity_1xn9xna">
+        <dc:Bounds x="750" y="220" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0fo0afs_di" bpmnElement="Event_0fo0afs">
+        <dc:Bounds x="922" y="242" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ew392c_di" bpmnElement="Activity_1ew392c">
+        <dc:Bounds x="470" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_07mykf0_di" bpmnElement="Activity_07mykf0">
+        <dc:Bounds x="470" y="280" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1i88ar5_di" bpmnElement="Gateway_1i88ar5" isMarkerVisible="true">
+        <dc:Bounds x="625" y="235" width="50" height="50" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

@@ -2,7 +2,9 @@
 -- определенной торговой точки за указанный период
 SELECT COUNT(*) AS output
 FROM selling
-WHERE datetime > ?
-  AND datetime < ?
+WHERE sale_datetime
+    > ?
+  AND sale_datetime
+    < ?
   AND outlet_id = ?
-  AND outlet_employee_id = ?;
+  AND employee_id = ?;
